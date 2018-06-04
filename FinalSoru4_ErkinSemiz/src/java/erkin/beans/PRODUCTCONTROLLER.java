@@ -7,6 +7,7 @@ package erkin.beans;
 import erkin.entity.Product;
 import erkin.jpaejb.ProductFacade;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
@@ -41,23 +42,13 @@ public class PRODUCTCONTROLLER {
           Product p = new Product();
           p.setAvailable(productBean.isAVAILABLE());
           p.setDescription(productBean.getDESCRIPTION());
-         /* p.setMarkup(productBean.getMARKUP());
+          p.setMarkup(productBean.getMARKUP());
           p.setProductCode(productBean.getPRODUCT_CODE());
           p.setPurchaseCost(productBean.getPURCHASE_COST());
           p.setQuantityOnHand(productBean.getQUANTITY_ON_HAND());
+          p.setManufacturerId(productBean.getMANUFACTURER_ID());
           
-          
-          m.setAddressline1(productBean.getADDRESSLINE1());
-          m.setAddressline2(productBean.getADDRESSLINE2());
-          m.setCity(productBean.getCITY());
-          m.setEmail(productBean.getEMAIL());
-          m.setFax(productBean.getFAX());
-          m.setName(productBean.getNAME());
-          m.setPhone(productBean.getPHONE());
-          m.setState(productBean.getSTATE());
-          m.setZip(productBean.getZIP());
-          
-          ProductFacade.create(m);
+          ProductFacade.create(p);
           return "index";
       } 
       
@@ -65,30 +56,35 @@ public class PRODUCTCONTROLLER {
       {
           
           productBean.setPRODUCT_ID(productBean.getPRODUCT_ID());
-         
+          productBean.setAVAILABLE(productBean.isAVAILABLE());
+          productBean.setDESCRIPTION(productBean.getDESCRIPTION());
+          productBean.setMANUFACTURER_ID(productBean.getMANUFACTURER_ID());
+          productBean.setMARKUP(productBean.getMARKUP());
+          productBean.setPRODUCT_CODE(productBean.getPRODUCT_CODE());
+          productBean.setPURCHASE_COST(productBean.getPURCHASE_COST());
+          productBean.setQUANTITY_ON_HAND(productBean.getQUANTITY_ON_HAND());
+          
           return "update";
       }
       
       public String Save()
       {
-          Product m = new Product(productBean.getMANUFACTURER_ID());
-          m.setAddressline1(productBean.getADDRESSLINE1());
-          m.setAddressline2(productBean.getADDRESSLINE2());
-          m.setCity(productBean.getCITY());
-          m.setEmail(productBean.getEMAIL());
-          m.setFax(productBean.getFAX());
-          m.setName(productBean.getNAME());
-          m.setPhone(productBean.getPHONE());
-          m.setState(productBean.getSTATE());
-          m.setZip(productBean.getZIP());
+          Product p = new Product(productBean.getPRODUCT_ID());
+          p.setAvailable(productBean.isAVAILABLE());
+          p.setDescription(productBean.getDESCRIPTION());
+          p.setMarkup(productBean.getMARKUP());
+          p.setProductCode(productBean.getPRODUCT_CODE());
+          p.setPurchaseCost(productBean.getPURCHASE_COST());
+          p.setQuantityOnHand(productBean.getQUANTITY_ON_HAND());
+          p.setManufacturerId(productBean.getMANUFACTURER_ID());
       
-          ProductFacade.edit(m);
+          ProductFacade.edit(p);
           
           return "index";
       
       }
 }
 }
-*/      return null;
+
       }
 }
