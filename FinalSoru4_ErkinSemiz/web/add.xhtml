@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C/DTD XHTML 1.0 Transitional//EN" "http://www.w3c.org/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      <h:head>
+          <title>Facelet Title</title>
+    </h:head>
+      <h:body>
+          <h:form>
+              <h:panelGrid columns="2">
+                  Title
+                  <h:outputText value="#{MANUFACTURERBEANS.MANUFACTURER_ID}"/>
+                  Address
+                  <h:inputText value="#{MANUFACTURERBEANS.ADRESSLINE1}"/>
+                  City
+                  <h:inputText value="#{MANUFACTURERBEANS.CITY}"/>
+                  State
+                  <h:inputText value="#{MANUFACTURERBEANS.STATE}"/>
+                  Email
+                  <h:inputText value="#{MANUFACTURERBEANS.EMAIL}"/>
+                  Zip
+                  <h:inputText value="#{MANUFACTURERBEANS.ZIP}"/>
+                  Phone
+                  <h:inputText value="#{MANUFACTURERBEANS.PHONE}"/>
+                  Fax
+                  <h:inputText value="#{MANUFACTURERBEANS.FAX}"/>
+                 
+                  <h:panelGroup/>
+                  
+                  <h:commandButton value="Add"
+                                   action="#{MANUFACTURERCONTROLLER.add()}" />
+                  Title
+                  <h:outputText value="#{PRODUCTBEANS.MANUFACTURER_ID}"/>
+                  Manufacturer
+                  <h:inputText value="#{PRODUCTBEANS.ADRESSLINE1}"/>
+                  Code
+                  <h:inputText value="#{PRODUCTBEANS.CITY}"/>
+                  Cost
+                  <h:inputText value="#{PRODUCTBEANS.STATE}"/>
+                  Quantity
+                  <h:inputText value="#{PRODUCTBEANS.EMAIL}"/>
+                  Markup
+                  <h:inputText value="#{PRODUCTBEANS.ZIP}"/>
+                  Available
+                  <h:inputText value="#{PRODUCTBEANS.PHONE}"/>
+                  Description
+                  <h:inputText value="#{PRODUCTBEANS.FAX}"/>
+                 
+                  <h:panelGroup/>
+                   <h:commandButton value="Add"
+                                   action="#{PRODUCTCONTROLLER.add()}" />
+                 
+              </h:panelGrid>
+            
+          </h:form>
+          <br />
+    </h:body>

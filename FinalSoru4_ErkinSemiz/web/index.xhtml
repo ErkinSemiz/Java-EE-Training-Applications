@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C/DTD XHTML 1.0 Transitional//EN" "http://www.w3c.org/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      <h:head>
+          <title>JPA demo</title>
+    </h:head>
+      <h:body>
+          <h3> Total # of Manufacturers: #{MANUFACTURERCONTROLLER.count()}</h3>
+          <h:form>
+              <h:dataTable value="#{MANUFACTURERCONTROLLER.getAll()}" var="manu">
+                  <h:column>
+                      <f:facet name="header">edit</facet>
+                      <h:commandLink value="Edit"
+                                     action="#{MANUFACTURERCONTROLLER.edit(manu)}" />
+                      
+                  </h:column>
+                  
+                  <h:column>
+                      <f:facet name="header">ID</facet>
+                      #{manu.MANUFACTURER_ID}
+                  </h:column>
+                  
+                  <h:column>
+                      <f:facet name="header">ADDRESS</facet>
+                      #{manu.ADDRESSLINE1}
+                      #{manu.ADDRESSLINE2}
+                  </h:column>
+                  
+                  <h:column>
+                      <f:facet name="header">CITY</facet>
+                      #{manu.CITY}
+                  </h:column>
+                  <h:column>
+                      <f:facet name="header">STATE</facet>
+                      #{manu.STATE}
+                  </h:column>
+                  <h:column>
+                      <f:facet name="header">EMAIL</facet>
+                      #{manu.EMAIL}
+                  </h:column>
+                  <h:column>
+                      <f:facet name="header">ZIP</facet>
+                      #{manu.ZIP}
+                  </h:column>
+                  <h:column>
+                      <f:facet name="header">PHONE</facet>
+                      #{manu.PHONE}
+                  </h:column>
+                  <h:column>
+                      <f:facet name="header">FAX</facet>
+                      #{manu.FAX}
+                  </h:column>
+                  <h:column>
+                      <h:commandLink value="Delete"
+                                     action="#{MANUFACTURERCONTROLLER.delete(manu)}" />
+                      
+                  </h:column>
+                  
+              </h:dataTable>
+          <h:dataTable value="#{PRODUCTCONTROLLER.getAll()}" var="prod">
+                  <h:column>
+                      <f:facet name="header">edit</facet>
+                      <h:commandLink value="Edit"
+                                     action="#{PRODUCTCONTROLLER.edit(manu)}" />
+                      
+                  </h:column>
+                  
+                  <h:column>
+                      <f:facet name="header">ID</facet>
+                      #{prod.PRODUCT_ID}
+                  </h:column>
+                  
+                  <h:column>
+                      <f:facet name="header">Manufacturer</facet>
+                      #{prod.MANUFACTURER_ID}
+                  </h:column>
+                  
+                  <h:column>
+                      <f:facet name="header">CODE</facet>
+                      #{prod.PRODUCT_CODE}
+                  </h:column>
+                  <h:column>
+                      <f:facet name="header">COST</facet>
+                      #{prod.PURCHASE_COST}
+                  </h:column>
+                  <h:column>
+                      <f:facet name="header">QUANTITY</facet>
+                      #{prod.QUANTITY_ON_HAND}
+                  </h:column>
+                  <h:column>
+                      <f:facet name="header">MARKUP</facet>
+                      #{prod.MARKUP}
+                  </h:column>
+                  <h:column>
+                      <f:facet name="header">AVAILABLE</facet>
+                      #{prod.AVAILABLE}
+                  </h:column>
+                  <h:column>
+                      <f:facet name="header">DESCRIPTION</facet>
+                      #{prod.DESCRIPTION}
+                  </h:column>
+                  <h:column>
+                      <h:commandLink value="Delete"
+                                     action="#{PRODUCTCONTROLLER.delete(prod)}" />
+                      
+                  </h:column>
+                  
+              </h:dataTable>   
+          </h:form>
+          <br />
+    </h:body>
